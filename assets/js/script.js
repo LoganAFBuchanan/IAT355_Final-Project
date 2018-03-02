@@ -55,7 +55,7 @@ d3.csv(data, function(error, data) {
     .enter().append("g")
       .attr("class", "province");
 
-  city.append("path")
+  provinces.append("path")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) { return z(d.id); });

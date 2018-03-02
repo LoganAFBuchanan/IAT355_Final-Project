@@ -14,7 +14,7 @@ var x = d3.scaleTime().range([0, width]),
     y = d3.scaleLinear().range([height, 0]),
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
-d3.csv(data, type, function(error, data) {
+d3.csv(data, function(error, data) {
 	if (error) throw error;
 
 	var provinces = data.columns.slice(1).map(function(id) {

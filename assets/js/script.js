@@ -22,7 +22,10 @@ d3.csv(url, type, function(error, data) {
   if (error) throw error;
 
   var provinces = data.columns.slice(1).map(function(id) {
+
+    console.log(id);
     return {
+
       id: id,
       values: data.map(function(d) {
         return {date: d.date, loanValue: d[id]};

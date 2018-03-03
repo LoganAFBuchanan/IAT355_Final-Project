@@ -1,4 +1,4 @@
-var data = "./assets/data/LoanValueData.csv";
+var data = "./data/LoanValueData.csv";
 
 // adapted from bl.ocks.org
 // https://bl.ocks.org/mbostock/3884955

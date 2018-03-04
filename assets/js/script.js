@@ -12,6 +12,7 @@ document.querySelector("#BC").addEventListener("click", function(){
   updateFilters("British Columbia");
 });
 
+
 function updateFilters(prov){
   if(hideVal.includes(prov)){
     hideVal.splice(hideVal.findIndex(function(element){
@@ -60,9 +61,8 @@ function redrawGraph(){
     });
 
     for (let removedProv of hideVal) {
-      if(provinces.includes(province => province.id == removedProv)){
-        provinces.splice(provinces.findIndex(province => province.id == removedProv), 1);
-      }
+      console.log(removedProv);
+      provinces.splice(provinces.findIndex(province => province.id === removedProv), 1);
     }
 
     //provinces.splice(4, 1);
@@ -73,7 +73,7 @@ function redrawGraph(){
     x.domain(d3.extent(data, function(d) { return d.date; }));
 
     y.domain([
-       d3.min(provinces, function(c) { return d3.min(c.values, function(d) { return d.loanValue; }); }),
+      d3.min(provinces, function(c) { return d3.min(c.values, function(d) { return d.loanValue; }); }),
       d3.max(provinces, function(c) { return d3.max(c.values, function(d) { return d.loanValue; }); })
     ]);
 

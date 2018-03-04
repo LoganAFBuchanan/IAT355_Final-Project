@@ -1,18 +1,65 @@
+//Code Adapted from https://bl.ocks.org/mbostock/3884955
 
 "use strict";
 
+//Data url
 var url ="./data/LoanValueData.csv";
 
+//Array for hiding specific provinces
 var hideVal = [];
+
+//Parses time for use in d3 graphs
 var parseTime = d3.timeParse("%Y");
 
+//Draws initial graph
 redrawGraph();
 
 document.querySelector("#BC").addEventListener("click", function(){
   updateFilters("British Columbia");
 });
 
+document.querySelector("#Yukon").addEventListener("click", function(){
+  updateFilters("Yukon");
+});
 
+document.querySelector("#Alberta").addEventListener("click", function(){
+  updateFilters("Alberta");
+});
+
+document.querySelector("#Saskatchewan").addEventListener("click", function(){
+  updateFilters("Saskatchewan");
+});
+
+document.querySelector("#Manitoba").addEventListener("click", function(){
+  updateFilters("Manitoba");
+});
+
+document.querySelector("#Ontario").addEventListener("click", function(){
+  updateFilters("Ontario");
+});
+
+document.querySelector("#NB").addEventListener("click", function(){
+  updateFilters("New Brunswick");
+});
+
+document.querySelector("#NS").addEventListener("click", function(){
+  updateFilters("Nova Scotia");
+});
+
+document.querySelector("#PEI").addEventListener("click", function(){
+  updateFilters("Prince Edward Island");
+});
+
+document.querySelector("#Newfoundland").addEventListener("click", function(){
+  updateFilters("Newfoundland and Labrador");
+});
+
+
+//Updates the removed value array so that the graph can be updated
+
+// Adapted from MDN resources
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 function updateFilters(prov){
   if(hideVal.includes(prov)){
     hideVal.splice(hideVal.findIndex(function(element){
@@ -22,24 +69,35 @@ function updateFilters(prov){
     hideVal.push(prov);
   }
   console.log(hideVal);
+
+  clearGraph();
   redrawGraph();
+}
+
+
+// Adapted from Sami and Nux's answers to this stack exchange question https://stackoverflow.com/questions/10784018/how-can-i-remove-or-replace-svg-content
+
+//Clears the svg graph so that a new one can be drawn
+function clearGraph(){
+  d3.select("svg").selectAll("*").remove();;
 }
 
 
 function redrawGraph(){
 
+  //Sets up graph as well as margins
   var svg = d3.select("svg"),
   margin = {top: 20, right: 80, bottom: 30, left: 50},
   width = svg.attr("width") - margin.left - margin.right,
   height = svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
-
+  // Sets scales
   var x = d3.scaleTime().range([0, width]),
   y = d3.scaleLinear().range([height, 0]),
   z = d3.scaleOrdinal(d3.schemeCategory10);
 
+  //Creates line curve
   var line = d3.line()
   .curve(d3.curveBasis)
   .x(function(d) { return x(d.date); })
@@ -49,10 +107,8 @@ function redrawGraph(){
     if (error) throw error;
 
     var provinces = data.columns.slice(1).map(function(id) {
-
       console.log(id);
       return {
-
         id: id,
         values: data.map(function(d) {
           return {date: d.date, loanValue: d[id]};
@@ -65,10 +121,6 @@ function redrawGraph(){
       provinces.splice(provinces.findIndex(province => province.id === removedProv), 1);
     }
 
-    //provinces.splice(4, 1);
-
-    //This allows you to find the corresponding index of a province
-    console.log(provinces.findIndex(province => province.id == "Ontario"));
 
     x.domain(d3.extent(data, function(d) { return d.date; }));
 

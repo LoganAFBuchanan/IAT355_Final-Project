@@ -16,8 +16,8 @@
 
 .line {
   fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 3px;
+  shape-rendering:crispEdges;
 }
 
 </style>
@@ -25,18 +25,23 @@
   <title>Assignment 4</title>
 </head>
 <body>
-	<svg width="500" height="500"></svg>
 
-  <button id="Yukon">Yukon</button>
-  <button id="BC">B.C.</button>
-  <button id="Alberta">Alberta</button>
-  <button id="Saskatchewan">Saskatchewan</button>
-  <button id="Manitoba">Manitoba</button>
-  <button id="Ontario">Ontario</button>
-  <button id="NB">New Brunswick</button>
-  <button id="NS">Nova Scotia</button>
-  <button id="PEI">Prince Edward Island</button>
-  <button id="Newfoundland">Newfoundland and Labrador</button>
+  <main>
+  	<svg width="500" height="500"></svg>
+
+    <div class="button-container">
+      <button class="Yukon">Yukon</button>
+      <button class="BritishColumbia">B.C.</button>
+      <button class="Alberta">Alberta</button>
+      <button class="Saskatchewan">Saskatchewan</button>
+      <button class="Manitoba">Manitoba</button>
+      <button class="Ontario">Ontario</button>
+      <button class="NewBrunswick">New Brunswick</button>
+      <button class="NovaScotia">Nova Scotia</button>
+      <button class="PrinceEdwardIsland">Prince Edward Island</button>
+      <button class="NewfoundlandandLabrador">Newfoundland and Labrador</button>
+    </div>
+  </main>
 </body>
 <script src="assets/js/script.js"></script>
 

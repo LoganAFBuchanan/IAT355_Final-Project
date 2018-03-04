@@ -1,0 +1,71 @@
+main{
+  display:flex;
+}
+
+button{
+  display:block;
+  margin:1rem;
+  color:white;
+  padding:0.5rem 2rem;
+  border:0;
+}
+
+button.greyed{
+  background-color:grey;
+}
+
+#BritishColumbia{
+  stroke: red;
+  background-color: red;
+}
+
+.BritishColumbia{
+  stroke: red;
+  background-color: red;
+}
+
+.Alberta{
+  stroke:blue;
+  background-color: blue;
+}
+
+.Saskatchewan{
+  stroke: green;
+  background-color: green;
+}
+
+.Yukon{
+  stroke:yellow;
+  color:black;
+  background-color: yellow;
+}
+
+.Manitoba{
+  stroke: lightblue;
+  background-color: lightblue;
+}
+
+.Ontario{
+  stroke: purple;
+  background-color: purple;
+}
+
+.NewBrunswick{
+  stroke:brown;
+  background-color: brown;
+}
+
+.NovaScotia{
+  stroke: pink;
+  background-color: pink;
+}
+
+.PrinceEdwardIsland{
+  stroke: orange;
+  background-color: orange;
+}
+
+.NewfoundlandandLabrador{
+  stroke: darkgreen;
+  background-color: darkgreen;
+}

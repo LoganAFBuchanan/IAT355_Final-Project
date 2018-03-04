@@ -14,43 +14,34 @@ var parseTime = d3.timeParse("%Y");
 //Draws initial graph
 redrawGraph();
 
-document.querySelector("#BC").addEventListener("click", function(){
+document.querySelector("button.BritishColumbia").addEventListener("click", function(){
   updateFilters("British Columbia");
 });
-
-document.querySelector("#Yukon").addEventListener("click", function(){
+document.querySelector("button.Yukon").addEventListener("click", function(){
   updateFilters("Yukon");
 });
-
-document.querySelector("#Alberta").addEventListener("click", function(){
+document.querySelector("button.Alberta").addEventListener("click", function(){
   updateFilters("Alberta");
 });
-
-document.querySelector("#Saskatchewan").addEventListener("click", function(){
+document.querySelector("button.Saskatchewan").addEventListener("click", function(){
   updateFilters("Saskatchewan");
 });
-
-document.querySelector("#Manitoba").addEventListener("click", function(){
+document.querySelector("button.Manitoba").addEventListener("click", function(){
   updateFilters("Manitoba");
 });
-
-document.querySelector("#Ontario").addEventListener("click", function(){
+document.querySelector("button.Ontario").addEventListener("click", function(){
   updateFilters("Ontario");
 });
-
-document.querySelector("#NB").addEventListener("click", function(){
+document.querySelector("button.NewBrunswick").addEventListener("click", function(){
   updateFilters("New Brunswick");
 });
-
-document.querySelector("#NS").addEventListener("click", function(){
+document.querySelector("button.NovaScotia").addEventListener("click", function(){
   updateFilters("Nova Scotia");
 });
-
-document.querySelector("#PEI").addEventListener("click", function(){
+document.querySelector("button.PrinceEdwardIsland").addEventListener("click", function(){
   updateFilters("Prince Edward Island");
 });
-
-document.querySelector("#Newfoundland").addEventListener("click", function(){
+document.querySelector("button.NewfoundlandandLabrador").addEventListener("click", function(){
   updateFilters("Newfoundland and Labrador");
 });
 
@@ -71,7 +62,21 @@ function updateFilters(prov){
   console.log(hideVal);
 
   clearGraph();
+  updateButtons(prov);
   redrawGraph();
+}
+
+function updateButtons(prov_arg){
+  // Adapted from Henrik Andersson's answer here: https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
+  var noSpaceProv = prov_arg.replace(/\s/g, "");
+
+  var provElement = document.querySelector("button."+noSpaceProv);
+
+  if(provElement.classList.contains("greyed")){
+    provElement.classList.remove("greyed");
+  }else{
+    provElement.classList.add("greyed");
+  }
 }
 
 
@@ -116,6 +121,11 @@ function redrawGraph(){
       };
     });
 
+    //Goes through the removed values and splices them from the provinces data array
+
+    // Adapted from MDN resources
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     for (let removedProv of hideVal) {
       console.log(removedProv);
       provinces.splice(provinces.findIndex(province => province.id === removedProv), 1);
@@ -151,10 +161,9 @@ function redrawGraph(){
     .enter().append("g")
     .attr("class", "province");
 
-    province.append("path")
-    .attr("class", "line")
-    .attr("d", function(d) { return line(d.values); })
-    .style("stroke", function(d) { return z(d.id); });
+    province.append("line")
+    .attr("class", function(d) { return "line "+d.id.replace(/\s/g, ""); })
+    .attr("d", function(d) { return line(d.values); });
 
     province.append("text")
     .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })

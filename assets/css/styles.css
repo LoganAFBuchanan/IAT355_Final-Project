@@ -8,6 +8,7 @@ button{
   color:white;
   padding:0.5rem 2rem;
   border:0;
+  cursor:pointer;
 }
 
 button.greyed{

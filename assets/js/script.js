@@ -14,36 +14,52 @@ var parseTime = d3.timeParse("%Y");
 //Draws initial graph
 redrawGraph();
 
-document.querySelector("button.BritishColumbia").addEventListener("click", function(){
+
+//Click event listeners for each of the filter buttons
+document.querySelector("#BritishColumbia").addEventListener("click", function(){
   updateFilters("British Columbia");
 });
-document.querySelector("button.Yukon").addEventListener("click", function(){
+document.querySelector("#Yukon").addEventListener("click", function(){
   updateFilters("Yukon");
 });
-document.querySelector("button.Alberta").addEventListener("click", function(){
+document.querySelector("#Alberta").addEventListener("click", function(){
   updateFilters("Alberta");
 });
-document.querySelector("button.Saskatchewan").addEventListener("click", function(){
+document.querySelector("#Saskatchewan").addEventListener("click", function(){
   updateFilters("Saskatchewan");
 });
-document.querySelector("button.Manitoba").addEventListener("click", function(){
+document.querySelector("#Manitoba").addEventListener("click", function(){
   updateFilters("Manitoba");
 });
-document.querySelector("button.Ontario").addEventListener("click", function(){
+document.querySelector("#Ontario").addEventListener("click", function(){
   updateFilters("Ontario");
 });
-document.querySelector("button.NewBrunswick").addEventListener("click", function(){
+document.querySelector("#NewBrunswick").addEventListener("click", function(){
   updateFilters("New Brunswick");
 });
-document.querySelector("button.NovaScotia").addEventListener("click", function(){
+document.querySelector("#NovaScotia").addEventListener("click", function(){
   updateFilters("Nova Scotia");
 });
-document.querySelector("button.PrinceEdwardIsland").addEventListener("click", function(){
+document.querySelector("#PrinceEdwardIsland").addEventListener("click", function(){
   updateFilters("Prince Edward Island");
 });
-document.querySelector("button.NewfoundlandandLabrador").addEventListener("click", function(){
+document.querySelector("#NewfoundlandandLabrador").addEventListener("click", function(){
   updateFilters("Newfoundland and Labrador");
 });
+
+//Greys out buttons that represent values that aren't shown
+function updateButtons(prov_arg){
+  // Adapted from Henrik Andersson's answer here: https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
+  var noSpaceProv = prov_arg.replace(/\s/g, "");
+
+  var provElement = document.querySelector("button#"+noSpaceProv);
+
+  if(provElement.classList.contains("greyed")){
+    provElement.classList.remove("greyed");
+  }else{
+    provElement.classList.add("greyed");
+  }
+}
 
 
 //Updates the removed value array so that the graph can be updated
@@ -66,19 +82,6 @@ function updateFilters(prov){
   redrawGraph();
 }
 
-function updateButtons(prov_arg){
-  // Adapted from Henrik Andersson's answer here: https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
-  var noSpaceProv = prov_arg.replace(/\s/g, "");
-
-  var provElement = document.querySelector("button."+noSpaceProv);
-
-  if(provElement.classList.contains("greyed")){
-    provElement.classList.remove("greyed");
-  }else{
-    provElement.classList.add("greyed");
-  }
-}
-
 
 // Adapted from Sami and Nux's answers to this stack exchange question https://stackoverflow.com/questions/10784018/how-can-i-remove-or-replace-svg-content
 
@@ -99,8 +102,7 @@ function redrawGraph(){
 
   // Sets scales
   var x = d3.scaleTime().range([0, width]),
-  y = d3.scaleLinear().range([height, 0]),
-  z = d3.scaleOrdinal(d3.schemeCategory10);
+  y = d3.scaleLinear().range([height, 0]);
 
   //Creates line curve
   var line = d3.line()
@@ -132,14 +134,15 @@ function redrawGraph(){
     }
 
 
+    //X-axis domain based on year
     x.domain(d3.extent(data, function(d) { return d.date; }));
 
+    //Y axis domain based on the min/max of selected values
     y.domain([
       d3.min(provinces, function(c) { return d3.min(c.values, function(d) { return d.loanValue; }); }),
       d3.max(provinces, function(c) { return d3.max(c.values, function(d) { return d.loanValue; }); })
     ]);
 
-    z.domain(provinces.map(function(c) { return c.id; }));
 
     g.append("g")
     .attr("class", "axis axis--x")
@@ -161,8 +164,9 @@ function redrawGraph(){
     .enter().append("g")
     .attr("class", "province");
 
-    province.append("line")
-    .attr("class", function(d) { return "line "+d.id.replace(/\s/g, ""); })
+    province.append("path")
+    .attr("class", "line")
+    .attr("id", function(d) { return d.id.replace(/\s/g, ""); }) // Adapted from Henrik Andersson's answer here: https://stackoverflow.com/questions/10800355/remove-whitespaces-inside-a-string-in-javascript
     .attr("d", function(d) { return line(d.values); });
 
     province.append("text")

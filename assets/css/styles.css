@@ -11,7 +11,8 @@ button{
 }
 
 button.greyed{
-  background-color:grey;
+  background-color:grey !important;
+  opacity:.25;
 }
 
 #BritishColumbia{
@@ -19,53 +20,48 @@ button.greyed{
   background-color: red;
 }
 
-.BritishColumbia{
-  stroke: red;
-  background-color: red;
-}
-
-.Alberta{
+#Alberta{
   stroke:blue;
   background-color: blue;
 }
 
-.Saskatchewan{
+#Saskatchewan{
   stroke: green;
   background-color: green;
 }
 
-.Yukon{
+#Yukon{
   stroke:yellow;
   color:black;
   background-color: yellow;
 }
 
-.Manitoba{
+#Manitoba{
   stroke: lightblue;
   background-color: lightblue;
 }
 
-.Ontario{
+#Ontario{
   stroke: purple;
   background-color: purple;
 }
 
-.NewBrunswick{
+#NewBrunswick{
   stroke:brown;
   background-color: brown;
 }
 
-.NovaScotia{
+#NovaScotia{
   stroke: pink;
   background-color: pink;
 }
 
-.PrinceEdwardIsland{
+#PrinceEdwardIsland{
   stroke: orange;
   background-color: orange;
 }
 
-.NewfoundlandandLabrador{
+#NewfoundlandandLabrador{
   stroke: darkgreen;
   background-color: darkgreen;
 }

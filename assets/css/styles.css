@@ -15,6 +15,15 @@ button.greyed{
   opacity:.25;
 }
 
+.axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1px;
+}
+
 #BritishColumbia{
   stroke: red;
   background-color: red;

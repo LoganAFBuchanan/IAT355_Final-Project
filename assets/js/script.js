@@ -108,7 +108,7 @@ function redrawGraph(){
   .x(function(d) { return x(d.date); })
   .y(function(d) { return y(d.loanValue); });
 
-  d3.csv(url, function(error, data) {
+  d3.csv(url, type, function(error, data) {
     if (error) throw error;
 
     var provinces = data.columns.slice(1).map(function(id) {
@@ -175,8 +175,8 @@ function redrawGraph(){
   });
 }
 
-// function type(d, _, columns) {
-//   d.date = parseTime(d.date);
-//   for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
-//   return d;
-// }
+function type(d, _, columns) {
+  d.date = parseTime(d.date);
+  for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
+  return d;
+}

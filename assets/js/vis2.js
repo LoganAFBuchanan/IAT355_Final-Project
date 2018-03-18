@@ -1,3 +1,5 @@
+//"use strict";
+
 var url ="./data/StudentsAndLoans.csv";
 
 var svg = d3.select("#stacked-bars"),
@@ -18,17 +20,19 @@ var z = d3.scaleOrdinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 d3.csv(url, function(d, i, columns) {
-  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  d.total = t;
+  // for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+  // d.total = t;
+  console.log(d);
   return d;
 }, function(error, data) {
   if (error) throw error;
 
+
   var keys = data.columns.slice(2);
 
-  data.sort(function(a, b) { return b.total - a.total; });
-  x.domain(data.map(function(d) { return d.Province; }));
-  y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+  //data.sort(function(a, b) { return b.total - a.total; });
+  x.domain(data.map(function(d) { if(d.Year == 1992) return d.Province; }));
+  y.domain([0, d3.max(data, function(d) { return d.Students; })]).nice();
   z.domain(keys);
 
   g.append("g")

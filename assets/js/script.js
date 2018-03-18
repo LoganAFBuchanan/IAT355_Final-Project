@@ -14,6 +14,8 @@ var parseTime = d3.timeParse("%Y");
 //Draws initial graph
 redrawGraph();
 
+drawStackedBars();
+
 
 //Click event listeners for each of the filter buttons
 document.querySelector("#BritishColumbia").addEventListener("click", function(){
@@ -94,7 +96,7 @@ function clearGraph(){
 function redrawGraph(){
 
   //Sets up graph as well as margins
-  var svg = d3.select("svg"),
+  var svg = d3.select("#line-chart"),
   margin = {top: 20, right: 80, bottom: 30, left: 50},
   width = svg.attr("width") - margin.left - margin.right,
   height = svg.attr("height") - margin.top - margin.bottom,
@@ -183,4 +185,9 @@ function type(d, _, columns) {
   d.date = parseTime(d.date);
   for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
   return d;
+}
+
+
+function drawStackedBars(){
+  
 }

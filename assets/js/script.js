@@ -14,7 +14,7 @@ var parseTime = d3.timeParse("%Y");
 //Draws initial graph
 redrawGraph();
 
-drawStackedBars();
+
 
 
 //Click event listeners for each of the filter buttons
@@ -185,9 +185,4 @@ function type(d, _, columns) {
   d.date = parseTime(d.date);
   for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
   return d;
-}
-
-
-function drawStackedBars(){
-  
 }

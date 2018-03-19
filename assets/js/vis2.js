@@ -2,9 +2,15 @@
 
 var StudentData ="./data/StudentsAndLoans.csv";
 
-var filterYear = 1996;
+var filterYear = 1992;
 
 drawStackedBars();
+
+function sliderUpdate(val){
+  d3.select("#stacked-bars").selectAll("*").remove();
+  filterYear = val;
+  drawStackedBars();
+}
 
 function drawStackedBars(){
 
@@ -13,6 +19,8 @@ function drawStackedBars(){
   width = +svg.attr("width") - margin.left - margin.right,
   height = +svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
   var x = d3.scaleBand()
   .rangeRound([0, width])
@@ -101,6 +109,16 @@ function drawStackedBars(){
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
+
+    g.append("input")
+  				.attr("type", "range")
+  				.attr("min", "1992")
+  				.attr("max", "2015")
+  				.attr("step", "1")
+  				.attr("id", "year")
+  				.on("input", function input() {
+  					sliderUpdate(input);
+  				});
   });
 
 }

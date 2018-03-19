@@ -3,7 +3,7 @@
 "use strict";
 
 //Data url
-var url ="./data/LoanValueData.csv";
+var LoanValueData ="./data/LoanValueData.csv";
 
 //Array for hiding specific provinces
 var hideVal = [];
@@ -42,11 +42,11 @@ document.querySelector("#NewBrunswick").addEventListener("click", function(){
 document.querySelector("#NovaScotia").addEventListener("click", function(){
   updateFilters("Nova Scotia");
 });
-document.querySelector("#PrinceEdwardIsland").addEventListener("click", function(){
-  updateFilters("Prince Edward Island");
+document.querySelector("#PEI").addEventListener("click", function(){
+  updateFilters("PEI");
 });
-document.querySelector("#NewfoundlandandLabrador").addEventListener("click", function(){
-  updateFilters("Newfoundland and Labrador");
+document.querySelector("#Newfoundland").addEventListener("click", function(){
+  updateFilters("Newfoundland");
 });
 
 //Greys out buttons that represent values that aren't shown
@@ -82,6 +82,7 @@ function updateFilters(prov){
   clearGraph();
   updateButtons(prov);
   redrawGraph();
+  drawStackedBars();
 }
 
 
@@ -89,7 +90,8 @@ function updateFilters(prov){
 
 //Clears the svg graph so that a new one can be drawn
 function clearGraph(){
-  d3.select("svg").selectAll("*").remove();;
+  d3.select("#line-chart").selectAll("*").remove();
+  d3.select("#stacked-bars").selectAll("*").remove();
 }
 
 
@@ -112,7 +114,7 @@ function redrawGraph(){
   .x(function(d) { return x(d.date); })
   .y(function(d) { return y(d.loanValue); });
 
-  d3.csv(url, type, function(error, data) {
+  d3.csv(LoanValueData, type, function(error, data) {
     if (error) throw error;
 
     var provinces = data.columns.slice(1).map(function(id) {

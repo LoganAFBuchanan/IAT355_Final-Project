@@ -1,14 +1,16 @@
 main{
-  display:flex;
 }
 
 button{
-  display:block;
-  margin:1rem;
+  display:inline-block;
   color:white;
   padding:0.5rem 2rem;
   border:0;
   cursor:pointer;
+}
+
+.button-container{
+  display:block;
 }
 
 button.greyed{
@@ -66,12 +68,12 @@ button.greyed{
   background-color: pink;
 }
 
-#PrinceEdwardIsland{
+#PEI{
   stroke: orange;
   background-color: orange;
 }
 
-#NewfoundlandandLabrador{
+#Newfoundland{
   stroke: darkgreen;
   background-color: darkgreen;
 }

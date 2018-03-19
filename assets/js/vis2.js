@@ -17,22 +17,30 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range(["#98abc5", "#ff8c00"]);
 
-d3.csv(url, function(d, i, columns) {
-  // for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  // d.total = t;
-  console.log(d);
-  return d;
+d3.csv(url, function(data) {
+
+
+  //https://github.com/d3/d3-fetch/blob/master/README.md#dsv
+  if(data.Year == 1992){
+    return {
+      Year: data.Year, // convert "Year" column to Date
+      Province: data.Province,
+      Students: data.Students - data['Students with loans'],
+      ['Students with loans']: data['Students with loans'] // convert "Length" column to number
+    };
+  }
+
 }, function(error, data) {
   if (error) throw error;
 
 
-  var keys = data.columns.slice(2);
+  var keys = data.columns.slice(2).reverse();
 
   //data.sort(function(a, b) { return b.total - a.total; });
   x.domain(data.map(function(d) { if(d.Year == 1992) return d.Province; }));
-  y.domain([0, d3.max(data, function(d) { return d.Students; })]).nice();
+  y.domain([0, 140000]).nice();
   z.domain(keys);
 
   g.append("g")
@@ -41,7 +49,7 @@ d3.csv(url, function(d, i, columns) {
     .enter().append("g")
       .attr("fill", function(d) { return z(d.key); })
     .selectAll("rect")
-    .data(function(d) { return d; })
+    .data(function(d) { console.log(d); return d; })
     .enter().append("rect")
       .attr("x", function(d) { return x(d.data.Province); })
       .attr("y", function(d) { return y(d[1]); })

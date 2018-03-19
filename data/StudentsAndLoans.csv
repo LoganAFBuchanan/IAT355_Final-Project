@@ -1,6 +1,6 @@
 ﻿Year,Province,Students,Students with loans
-1992,Newfoundland and Labrador,22683,12132
-1992,Prince Edward Island,4563,2399
+1992,Newfoundland,22683,12132
+1992,P.E.I.,4563,2399
 1992,Nova Scotia,41175,14674
 1992,New Brunswick,28029,13472
 1992,Ontario,469308,128270
@@ -9,8 +9,8 @@
 1992,Alberta,114048,35513
 1992,British Columbia,144663,34292
 1992,Territories,1455,366
-1993,Newfoundland and Labrador,22548,11740
-1993,Prince Edward Island,4812,2211
+1993,Newfoundland,22548,11740
+1993,P.E.I.,4812,2211
 1993,Nova Scotia,41214,13905
 1993,New Brunswick,28350,13427
 1993,Ontario,465606,139299
@@ -19,8 +19,8 @@
 1993,Alberta,112911,36649
 1993,British Columbia,145371,35350
 1993,Territories,1899,385
-1994,Newfoundland and Labrador,23346,11936
-1994,Prince Edward Island,4326,2132
+1994,Newfoundland,23346,11936
+1994,P.E.I.,4326,2132
 1994,Nova Scotia,40248,14165
 1994,New Brunswick,28386,12775
 1994,Ontario,463173,162794
@@ -29,8 +29,8 @@
 1994,Alberta,111546,38305
 1994,British Columbia,147195,36685
 1994,Territories,2253,366
-1995,Newfoundland and Labrador,22077,12478
-1995,Prince Edward Island,4218,2065
+1995,Newfoundland,22077,12478
+1995,P.E.I.,4218,2065
 1995,Nova Scotia,43725,13430
 1995,New Brunswick,28650,10422
 1995,Ontario,465450,180644
@@ -39,8 +39,8 @@
 1995,Alberta,110937,32656
 1995,British Columbia,150033,39397
 1995,Territories,1398,286
-1996,Newfoundland and Labrador,21864,15236
-1996,Prince Edward Island,4155,2107
+1996,Newfoundland,21864,15236
+1996,P.E.I.,4155,2107
 1996,Nova Scotia,44076,14608
 1996,New Brunswick,28608,9455
 1996,Ontario,458871,178771
@@ -49,8 +49,8 @@
 1996,Alberta,114804,37439
 1996,British Columbia,154824,43361
 1996,Territories,1329,284
-1997,Newfoundland and Labrador,21948,18717
-1997,Prince Edward Island,4629,2169
+1997,Newfoundland,21948,18717
+1997,P.E.I.,4629,2169
 1997,Nova Scotia,44784,16201
 1997,New Brunswick,27957,13437
 1997,Ontario,455859,185297
@@ -59,8 +59,8 @@
 1997,Alberta,117555,38900
 1997,British Columbia,161229,46103
 1997,Territories,1464,241
-1998,Newfoundland and Labrador,22155,18796
-1998,Prince Edward Island,4860,2312
+1998,Newfoundland,22155,18796
+1998,P.E.I.,4860,2312
 1998,Nova Scotia,44604,16748
 1998,New Brunswick,28131,14127
 1998,Ontario,455526,188108
@@ -69,8 +69,8 @@
 1998,Alberta,123612,36973
 1998,British Columbia,163533,50904
 1998,Territories,1656,267
-1999,Newfoundland and Labrador,23685,17645
-1999,Prince Edward Island,5070,2650
+1999,Newfoundland,23685,17645
+1999,P.E.I.,5070,2650
 1999,Nova Scotia,44916,17463
 1999,New Brunswick,27852,14448
 1999,Ontario,466905,177451
@@ -79,8 +79,8 @@
 1999,Alberta,127764,36141
 1999,British Columbia,161172,46493
 1999,Territories,1491,229
-2000,Newfoundland and Labrador,20232,14842
-2000,Prince Edward Island,4734,2306
+2000,Newfoundland,20232,14842
+2000,P.E.I.,4734,2306
 2000,Nova Scotia,45744,16553
 2000,New Brunswick,28926,13782
 2000,Ontario,474450,169990
@@ -89,8 +89,8 @@
 2000,Alberta,124389,39,683
 2000,British Columbia,182709,51918
 2000,Territories,1428,268
-2001,Newfoundland and Labrador,22611,15953
-2001,Prince Edward Island,4911,3047
+2001,Newfoundland,22611,15953
+2001,P.E.I.,4911,3047
 2001,Nova Scotia,50928,16903
 2001,New Brunswick,30996,15708
 2001,Ontario,494664,158256
@@ -99,8 +99,8 @@
 2001,Alberta,128574,43294
 2001,British Columbia,196395,62953
 2001,Territories,1554,256
-2002,Newfoundland and Labrador,24765,13912
-2002,Prince Edward Island,5361,3068
+2002,Newfoundland,24765,13912
+2002,P.E.I.,5361,3068
 2002,Nova Scotia,49845,17234
 2002,New Brunswick,30924,15614
 2002,Ontario,531063,145287
@@ -109,8 +109,8 @@
 2002,Alberta,136518,42323
 2002,British Columbia,200340,64467
 2002,Territories,1482,256
-2003,Newfoundland and Labrador,25329,12554
-2003,Prince Edward Island,5649,3238
+2003,Newfoundland,25329,12554
+2003,P.E.I.,5649,3238
 2003,Nova Scotia,52440,16945
 2003,New Brunswick,32058,15439
 2003,Ontario,605610,148195
@@ -119,8 +119,8 @@
 2003,Alberta,140343,42052
 2003,British Columbia,202818,64993
 2003,Territories,1419,253
-2004,Newfoundland and Labrador,24609,11541
-2004,Prince Edward Island,5244,3385
+2004,Newfoundland,24609,11541
+2004,P.E.I.,5244,3385
 2004,Nova Scotia,51216,16697
 2004,New Brunswick,32943,15902
 2004,Ontario,617373,159684
@@ -129,8 +129,8 @@
 2004,Alberta,150132,42501
 2004,British Columbia,209328,65425
 2004,Territories,1491,256
-2005,Newfoundland and Labrador,27054,10395
-2005,Prince Edward Island,5466,3280
+2005,Newfoundland,27054,10395
+2005,P.E.I.,5466,3280
 2005,Nova Scotia,51324,16044
 2005,New Brunswick,32289,15434
 2005,Ontario,648342,167354
@@ -139,8 +139,8 @@
 2005,Alberta,153336,41422
 2005,British Columbia,212184,59764
 2005,Territories,1317,251
-2006,Newfoundland and Labrador,26805,9640
-2006,Prince Edward Island,5556,3239
+2006,Newfoundland,26805,9640
+2006,P.E.I.,5556,3239
 2006,Nova Scotia,51012,15895
 2006,New Brunswick,30768,15918
 2006,Ontario,657018,182016
@@ -149,8 +149,8 @@
 2006,Alberta,155922,37844
 2006,British Columbia,219123,56306
 2006,Territories,1029,230
-2007,Newfoundland and Labrador,27030,8887
-2007,Prince Edward Island,5676,3206
+2007,Newfoundland,27030,8887
+2007,P.E.I.,5676,3206
 2007,Nova Scotia,50322,15477
 2007,New Brunswick,30672,15676
 2007,Ontario,676236,192875
@@ -159,8 +159,8 @@
 2007,Alberta,154725,33779
 2007,British Columbia,221415,52298
 2007,Territories,999,221
-2008,Newfoundland and Labrador,27009,8570
-2008,Prince Edward Island,6573,3297
+2008,Newfoundland,27009,8570
+2008,P.E.I.,6573,3297
 2008,Nova Scotia,50310,15137
 2008,New Brunswick,30114,15446
 2008,Ontario,698598,207694
@@ -169,8 +169,8 @@
 2008,Alberta,176700,33183
 2008,British Columbia,225963,49966
 2008,Territories,894,203
-2009,Newfoundland and Labrador,27462,7646
-2009,Prince Edward Island,5988,3286
+2009,Newfoundland,27462,7646
+2009,P.E.I.,5988,3286
 2009,Nova Scotia,52065,15158
 2009,New Brunswick,31431,14943
 2009,Ontario,747912,219632
@@ -179,8 +179,8 @@
 2009,Alberta,184581,35356
 2009,British Columbia,261339,51570
 2009,Territories,1041,213
-2010,Newfoundland and Labrador,28494,7382
-2010,Prince Edward Island,6372,3286
+2010,Newfoundland,28494,7382
+2010,P.E.I.,6372,3286
 2010,Nova Scotia,54642,14631
 2010,New Brunswick,32703,14727
 2010,Ontario,766674,243515
@@ -189,8 +189,8 @@
 2010,Alberta,188268,42006
 2010,British Columbia,268893,58066
 2010,Territories,1182,200
-2011,Newfoundland and Labrador,28188,6950
-2011,Prince Edward Island,6696,3326
+2011,Newfoundland,28188,6950
+2011,P.E.I.,6696,3326
 2011,Nova Scotia,55062,14835
 2011,New Brunswick,32139,14604
 2011,Ontario,781668,256692
@@ -199,8 +199,8 @@
 2011,Alberta,189093,47503
 2011,British Columbia,273126,60593
 2011,Territories,4062,211
-2012,Newfoundland and Labrador,28500,6635
-2012,Prince Edward Island,6531,3307
+2012,Newfoundland,28500,6635
+2012,P.E.I.,6531,3307
 2012,Nova Scotia,54948,15351
 2012,New Brunswick,31098,14586
 2012,Ontario,796077,273614
@@ -209,8 +209,8 @@
 2012,Alberta,191619,49882
 2012,British Columbia,273105,62087
 2012,Territories,3681,200
-2013,Newfoundland and Labrador,27207,6354
-2013,Prince Edward Island,6414,3280
+2013,Newfoundland,27207,6354
+2013,P.E.I.,6414,3280
 2013,Nova Scotia,55620,15790
 2013,New Brunswick,30564,13619
 2013,Ontario,814863,302355
@@ -219,8 +219,8 @@
 2013,Alberta,186600,49114
 2013,British Columbia,277515,60158
 2013,Territories,3834,170
-2014,Newfoundland and Labrador,27168,6081
-2014,Prince Edward Island,6552,3115
+2014,Newfoundland,27168,6081
+2014,P.E.I.,6552,3115
 2014,Nova Scotia,55200,16637
 2014,New Brunswick,28317,12859
 2014,Ontario,823914,323200

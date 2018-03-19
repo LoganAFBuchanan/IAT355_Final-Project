@@ -2,6 +2,8 @@
 
 var url ="./data/StudentsAndLoans.csv";
 
+var filterYear = 1992;
+
 var svg = d3.select("#stacked-bars"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
@@ -17,13 +19,12 @@ var y = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#ff8c00"]);
+    .range(["#24aa5e", "#31e981"]);
 
 d3.csv(url, function(data) {
 
-
   //https://github.com/d3/d3-fetch/blob/master/README.md#dsv
-  if(data.Year == 1992){
+  if(data.Year == filterYear){
     return {
       Year: data.Year, // convert "Year" column to Date
       Province: data.Province,
@@ -39,8 +40,8 @@ d3.csv(url, function(data) {
   var keys = data.columns.slice(2).reverse();
 
   //data.sort(function(a, b) { return b.total - a.total; });
-  x.domain(data.map(function(d) { if(d.Year == 1992) return d.Province; }));
-  y.domain([0, 140000]).nice();
+  x.domain(data.map(function(d) { if(d.Year == filterYear) return d.Province; }));
+  y.domain([0, d3.max(data, function(d) { return +d.Students + +d['Students with loans']; })]).nice();
   z.domain(keys);
 
   g.append("g")

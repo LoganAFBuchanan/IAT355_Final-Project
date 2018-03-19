@@ -123,6 +123,16 @@ function drawStackedBars(){
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
 
+    var title = g.append("g")
+    .attr("id", "stacked-title")
+    .attr("text-anchor", "center");
+
+    title.append("text")
+    .attr("x", width/2)
+    .attr("y", 9.5)
+    .attr("dy", "0.32em")
+    .text("Student Loan Figures: "+ filterYear);
+
 
 
   });

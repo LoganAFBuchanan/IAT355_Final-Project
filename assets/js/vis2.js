@@ -96,7 +96,7 @@ function drawStackedBars(){
       .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
       .attr("y", this.getAttribute("y"))
       .attr("style", "opacity:1;")
-      .text(d[1]);
+      .text(d[1]- d[0]);
     })
     .on('mouseout', function(d){
       this.style.cssText = "opacity: 1"; //Sets colourof the bar back to normal after mouse leaves

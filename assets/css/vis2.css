@@ -6,5 +6,10 @@
 #stacked-title{
   font-size:2rem;
   font-family:monospace;
-  
+
+}
+
+
+.fade{
+  opacity:0.5;
 }

@@ -1,11 +1,16 @@
 //"use strict";
 
+//Data file which is a combination of the total students and total loan data sets
 var StudentData ="./data/StudentsAndLoans.csv";
 
+//Filter year variable, this is what the default year value will be on page load
 var filterYear = 1992;
 
+//Initial draw
 drawStackedBars();
 
+//Function that gets called whenever the year slider is changed
+//It sets the filter year to the new value and then redraws the graph
 function sliderUpdate(){
   d3.select("#stacked-bars").selectAll("*").remove();
   filterYear = document.querySelector("#year").value;
@@ -25,6 +30,7 @@ sliderContainer.append("input")
   sliderUpdate();
 });
 
+//Function that builds the whole graph from scratch
 function drawStackedBars(){
 
   var svg = d3.select("#stacked-bars"),
@@ -32,8 +38,6 @@ function drawStackedBars(){
   width = +svg.attr("width") - margin.left - margin.right,
   height = +svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
 
   var x = d3.scaleBand()
   .rangeRound([0, width])
@@ -49,6 +53,7 @@ function drawStackedBars(){
   d3.csv(StudentData, function(data) {
 
     //https://github.com/d3/d3-fetch/blob/master/README.md#dsv
+    //Filters out rows that aren't in the selected year
     if(data.Year == filterYear){
       if(hideVal.includes(data.Province)){
         return;
@@ -72,6 +77,7 @@ function drawStackedBars(){
     y.domain([0, d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; })]).nice();
     z.domain(keys);
 
+    //Main graph creation
     g.append("g")
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
@@ -85,14 +91,26 @@ function drawStackedBars(){
     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
     .attr("width", x.bandwidth())
     .on('mouseover', function(d){
-      d3.select(this).style({opacity:'0.8'});
+      this.style.cssText = "opacity: 0.8"; //Highlights hovered bar by lightening the colour
+      d3.select("#tooltip")
+      .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
+      .attr("y", this.getAttribute("y"))
+      .attr("style", "opacity:1;")
+      .text(d[1]);
+    })
+    .on('mouseout', function(d){
+      this.style.cssText = "opacity: 1"; //Sets colourof the bar back to normal after mouse leaves
+      d3.select("#tooltip")
+      .attr("style", "opacity:0;"); //Makes tooltip text invisible
     });
 
+    //Creating X Axis
     g.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x));
 
+    //Creating Y Axis
     g.append("g")
     .attr("class", "axis")
     .call(d3.axisLeft(y).ticks(null, "s"))
@@ -105,6 +123,19 @@ function drawStackedBars(){
     .attr("text-anchor", "start")
     .text("Total Students");
 
+    //Creating tool tip object so that it can be moved around the graph based on current hover states
+    var toolTip = g.append("g")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", 12)
+    .attr("text-anchor", "end");
+
+    toolTip.append("text")
+    .attr("x", 0)
+    .attr("width", 190)
+    .attr("height", 50)
+    .attr("id", "tooltip");
+
+    //Colour legend for the stacked bar chart
     var legend = g.append("g")
     .attr("font-family", "sans-serif")
     .attr("font-size", 10)
@@ -114,27 +145,31 @@ function drawStackedBars(){
     .enter().append("g")
     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
+    //Colour square for each legend item
     legend.append("rect")
     .attr("x", width - 19)
     .attr("width", 19)
     .attr("height", 19)
     .attr("fill", z);
 
+    //Text for each legend item
     legend.append("text")
     .attr("x", width - 24)
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
 
+
+    //Title text for the stacked bar chart
     var title = g.append("g")
     .attr("id", "stacked-title")
     .attr("text-anchor", "center");
 
     title.append("text")
-    .attr("x", width/4)
+    .attr("x", width/4) //Using positioning to roughly center because Edge doesn't like the transform attribute on svg elements
     .attr("y", 9.5)
     .attr("dy", "0.32em")
-    .text("Student Loan Figures: "+ filterYear);
+    .text("Student Loan Figures: "+ filterYear); //Updates the title with the selected year
 
 
 

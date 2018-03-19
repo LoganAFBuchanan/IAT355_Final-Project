@@ -128,7 +128,7 @@ function drawStackedBars(){
     .attr("text-anchor", "center");
 
     title.append("text")
-    .attr("x", width/2)
+    .attr("x", width/4)
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text("Student Loan Figures: "+ filterYear);

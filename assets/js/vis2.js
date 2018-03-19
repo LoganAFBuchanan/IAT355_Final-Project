@@ -6,11 +6,24 @@ var filterYear = 1992;
 
 drawStackedBars();
 
-function sliderUpdate(val){
+function sliderUpdate(){
   d3.select("#stacked-bars").selectAll("*").remove();
-  filterYear = val;
+  filterYear = document.querySelector("#year").value;
   drawStackedBars();
 }
+
+//https://bl.ocks.org/tomshanley/3c49d036610853d380e3fcaf8d3f0b89
+var sliderContainer = d3.select(".button-container")
+sliderContainer.append("input")
+.attr("type", "range")
+.attr("min", "1992")
+.attr("max", "2014")
+.attr("value", "1992")
+.attr("step", "1")
+.attr("id", "year")
+.on("input", function input() {
+  sliderUpdate();
+});
 
 function drawStackedBars(){
 
@@ -110,15 +123,8 @@ function drawStackedBars(){
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
 
-    g.append("input")
-  				.attr("type", "range")
-  				.attr("min", "1992")
-  				.attr("max", "2015")
-  				.attr("step", "1")
-  				.attr("id", "year")
-  				.on("input", function input() {
-  					sliderUpdate(input);
-  				});
+
+
   });
 
 }

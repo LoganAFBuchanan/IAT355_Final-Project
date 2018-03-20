@@ -40,6 +40,7 @@ function drawStackedBars(){
   height = +svg.attr("height") - margin.top - margin.bottom,
   g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+  //Setting scaling variables
   var x = d3.scaleBand()
   .rangeRound([0, width])
   .paddingInner(0.05)

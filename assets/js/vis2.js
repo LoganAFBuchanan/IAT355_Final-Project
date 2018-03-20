@@ -31,6 +31,7 @@ sliderContainer.append("input")
 });
 
 //Function that builds the whole graph from scratch
+//Adapted from Mike Bostock https://bl.ocks.org/mbostock/3886208
 function drawStackedBars(){
 
   var svg = d3.select("#stacked-bars"),

@@ -93,6 +93,7 @@ function drawStackedBars(){
     .on('mouseover', function(d){
       this.style.cssText = "opacity: 0.8"; //Highlights hovered bar by lightening the colour
       d3.select("#tooltip")
+          .transition()
       .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
       .attr("y", this.getAttribute("y"))
       .attr("style", "opacity:1;")

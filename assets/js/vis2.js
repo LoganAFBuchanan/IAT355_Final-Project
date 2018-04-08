@@ -2,9 +2,14 @@
 
 //Data file which is a combination of the total students and total loan data sets
 var StudentData ="./data/StudentsAndLoans.csv";
+var PopulationData = "./data/Populations.csv";
 
 //Filter year variable, this is what the default year value will be on page load
 var filterYear = 1992;
+
+var percentageToggle = false;
+
+var percentageData;
 
 //Initial draw
 drawStackedBars();
@@ -52,20 +57,30 @@ function drawStackedBars(){
   var z = d3.scaleOrdinal()
   .range(["#24aa5e", "#31e981"]);
 
+  //Population Tests
+  d3.csv(PopulationData, function(popData){
+    percentageData = popData;
+    console.log(percentageData);
+  });
+
   d3.csv(StudentData, function(data) {
 
     //https://github.com/d3/d3-fetch/blob/master/README.md#dsv
     //Filters out rows that aren't in the selected year
+
     if(data.Year == filterYear){
       if(hideVal.includes(data.Province)){
         return;
       }
+
       return {
         Year: data.Year,
         Province: data.Province,
         ['Students without loans']: data['Students without loans'] - data['Students with loans'], //Subtracts students with loans from total to accurately portray the total number of students on the graph
         ['Students with loans']: data['Students with loans']
       };
+
+
     }
 
   }, function(error, data) {
@@ -95,7 +110,7 @@ function drawStackedBars(){
     .on('mouseover', function(d){
       this.style.cssText = "opacity: 0.8"; //Highlights hovered bar by lightening the colour
       d3.select("#tooltip")
-          .transition()
+      .transition()
       .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
       .attr("y", this.getAttribute("y"))
       .attr("style", "opacity:1;")

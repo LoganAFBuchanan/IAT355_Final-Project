@@ -9,8 +9,6 @@ var filterYear = 1992;
 
 var percentageToggled = false;
 
-var percentageData;
-
 //Initial draw
 drawStackedBars();
 
@@ -83,10 +81,10 @@ function drawStackedBars(){
   .range(["#24aa5e", "#31e981"]);
 
   //Population Tests
-  d3.csv(PopulationData, function(popData){
-    percentageData = popData;
-    console.log(percentageData);
-  });
+  // d3.csv(PopulationData, function(popData){
+  //   percentageData = popData;
+  //   console.log(percentageData);
+  // });
 
   d3.csv(StudentData, function(data) {
 
@@ -98,16 +96,18 @@ function drawStackedBars(){
         return;
       }
 
-      return {
-        Year: data.Year,
-        Province: data.Province,
-        ['Students without loans']: data['Students without loans'] - data['Students with loans'], //Subtracts students with loans from total to accurately portray the total number of students on the graph
-        ['Students with loans']: data['Students with loans']
-      };
-
-
+      if (percentageToggled) {
+        // get percentage of population
+        
+      } else {
+        return {
+          Year: data.Year,
+          Province: data.Province,
+          ['Students without loans']: data['Students without loans'] - data['Students with loans'], //Subtracts students with loans from total to accurately portray the total number of students on the graph
+          ['Students with loans']: data['Students with loans']
+        };
+      }
     }
-
   }, function(error, data) {
     if (error) throw error;
 
@@ -171,9 +171,12 @@ function drawStackedBars(){
       .domain([100, 0])
       .rangeRound([0, height]);
 
+      var formatPercent = d3.format(".0%");
+
       var axis = d3.axisLeft()
       .scale(scale)
-      .ticks(6);
+      .ticks(8)
+      .tickFormat(d => d + "%");
 
       g.append("g")
       .attr("class", "axis")

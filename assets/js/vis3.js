@@ -51,18 +51,11 @@ function drawGroupedBars(){
   }, function(error, data) {
     if (error) throw error;
 
-    console.log("THIS BE THE DATA");
-    console.log(data);
-
-    //var keys = data.columns.slice(1);
-
     var keys = [
       "Percentage of graduates who owed debt to the source",
       "Percentage of graduates with large debt at graduation ($25000 and over)"
     ];
-    console.log("THIS BE THE FIRST ONE");
     console.log(data.columns);
-    console.log("THIS BE THE KEYS ONE");
     console.log(keys);
 
     x0.domain(data.map(function(d) { return d.Level; }));
@@ -76,11 +69,7 @@ function drawGroupedBars(){
     .attr("transform", function(d) { return "translate(" + x0(d.Level) + ",0)"; })
     .selectAll("rect")
     .data(function(d) {
-      console.log("THIS BE THE D");
-      console.log(d);
       return keys.map(function(key) {
-        console.log("THIS BE THE D VALUE");
-        console.log(d["Value"]);
         if(key == d["GraduateType"]){
           return {key: key, Value: d["Value"]};
         }else{

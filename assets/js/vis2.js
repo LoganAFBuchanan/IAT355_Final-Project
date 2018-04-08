@@ -20,11 +20,9 @@ function switchGraphMode() {
   percentageToggle();
   clearGraph();
   drawStackedBars();
+  redrawGraph();
 }
 
-function clearGraph(){
-  d3.select("#stacked-bars").selectAll("*").remove();
-}
 
 //Greys out buttons that represent values that aren't shown
 function percentageToggle(){
@@ -98,7 +96,7 @@ function drawStackedBars(){
 
       if (percentageToggled) {
         // get percentage of population
-        
+
       } else {
         return {
           Year: data.Year,
@@ -190,7 +188,7 @@ function drawStackedBars(){
       .attr("text-anchor", "start")
       .text("Percentage of population");
     }
-    
+
     //Creating tool tip object so that it can be moved around the graph based on current hover states
     var toolTip = g.append("g")
     .attr("font-family", "sans-serif")

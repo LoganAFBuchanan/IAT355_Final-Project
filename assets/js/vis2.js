@@ -23,7 +23,7 @@ function sliderUpdate(){
 }
 
 //https://bl.ocks.org/tomshanley/3c49d036610853d380e3fcaf8d3f0b89
-var sliderContainer = d3.select(".button-container")
+var sliderContainer = d3.select("#loan-figures")
 sliderContainer.append("input")
 .attr("type", "range")
 .attr("min", "1992")

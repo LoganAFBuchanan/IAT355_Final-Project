@@ -1,3 +1,14 @@
+.quadrant {
+  display: inline-block;
+  width: 40%;
+  margin-right: 8em;
+  vertical-align: top;
+}
+
+.quadrant svg {
+
+}
+
 #stacked-title{
   font-size:1.7rem;
   font-family:monospace;

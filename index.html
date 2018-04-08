@@ -9,16 +9,20 @@
   <link rel="stylesheet" href="assets/css/vis1.css" type="text/css">
   <link rel="stylesheet" href="assets/css/vis2.css" type="text/css">
 
-
   <title>Assignment 5</title>
 </head>
 <body>
-
   <main>
-  	<svg id="line-chart" width="800" height="500"></svg>
-    <svg id="stacked-bars" width="800" height="500"></svg>
-
-    <div class="button-container">
+    <div class='quadrant' id='loan-figures'>
+      <svg id="stacked-bars" width="700" height="500"></svg>
+    </div>
+    <div class='quadrant'>
+      <svg id="line-chart" width="700" height="500"></svg>
+    </div>
+    <div class='quadrant'>
+      <svg id="grouped-bars" width="700" height="500"></svg>
+    </div>
+    <div class='quadrant'>
       <div class="button-row">
         <button id="Yukon">Yukon</button>
         <button id="BritishColumbia">B.C.</button>
@@ -36,4 +40,5 @@
 </body>
   <script src="assets/js/vis1.js"></script>
   <script src="assets/js/vis2.js"></script>
+  <script src="assets/js/vis3.js"></script>
 </html>

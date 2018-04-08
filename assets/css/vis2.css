@@ -1,5 +1,5 @@
 /* Adapted from https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
-input[type=range]::-webkit-slider-thumb {
+/*input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
@@ -37,7 +37,7 @@ input[type=range]::-ms-thumb {
   border-radius: 3px;
   background: #ffffff;
   cursor: pointer;
-}
+}*/
 
 
 #year {

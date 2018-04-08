@@ -192,7 +192,7 @@ function redrawGraph(){
     // .style("font", "10px sans-serif")
     // .text(function(d) { return d.id; });
 
-    
+
 
   });
 }

@@ -28,6 +28,7 @@ button{
   cursor:pointer;
   opacity: 0.85;
   transition: 0.2s;
+  flex-basis:20%;
 }
 
 button:hover {
@@ -42,6 +43,8 @@ button:hover {
 
 .button-row {
   /*width: 1500px;*/
+  display:flex;
+  flex-flow:wrap;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;

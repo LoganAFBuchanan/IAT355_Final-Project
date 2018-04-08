@@ -111,3 +111,8 @@ button.greyed{
   stroke: darkgreen;
   background-color: darkgreen;
 }
+
+#capita-toggle {
+  stroke: red;
+  background-color: red;
+}

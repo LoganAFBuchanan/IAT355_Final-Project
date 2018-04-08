@@ -7,12 +7,37 @@ var PopulationData = "./data/Populations.csv";
 //Filter year variable, this is what the default year value will be on page load
 var filterYear = 1992;
 
-var percentageToggle = false;
+var percentageToggled = false;
 
 var percentageData;
 
 //Initial draw
 drawStackedBars();
+
+document.querySelector("#capita-toggle").addEventListener("click", function(){
+  switchGraphMode();
+});
+
+function switchGraphMode() {
+  percentageToggle();
+  clearGraph();
+  drawStackedBars();
+}
+
+function clearGraph(){
+  d3.select("#stacked-bars").selectAll("*").remove();
+}
+
+//Greys out buttons that represent values that aren't shown
+function percentageToggle(){
+  if (percentageToggled == false) {
+    percentageToggled = true;
+    document.querySelector("#capita-toggle").classList.remove("greyed");
+  } else {
+    percentageToggled = false;
+    document.querySelector("#capita-toggle").classList.add("greyed");
+  }
+}
 
 //Function that gets called whenever the year slider is changed
 //It sets the filter year to the new value and then redraws the graph
@@ -129,18 +154,40 @@ function drawStackedBars(){
     .call(d3.axisBottom(x));
 
     //Creating Y Axis
-    g.append("g")
-    .attr("class", "axis")
-    .call(d3.axisLeft(y).ticks(null, "s"))
-    .append("text")
-    .attr("x", 2)
-    .attr("y", y(y.ticks().pop()) + 0.5)
-    .attr("dy", "0.32em")
-    .attr("fill", "#000")
-    .attr("font-weight", "bold")
-    .attr("text-anchor", "start")
-    .text("Total Students");
+    if (!percentageToggled) {
+      g.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(null, "s"))
+      .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Total Students");
+    } else {
+      var scale = d3.scaleLinear()
+      .domain([100, 0])
+      .rangeRound([0, height]);
 
+      var axis = d3.axisLeft()
+      .scale(scale)
+      .ticks(6);
+
+      g.append("g")
+      .attr("class", "axis")
+      .call(axis)
+      .append("text")
+      .attr("x", 2)
+      .attr("y", y(y.ticks().pop()) + 0.5)
+      .attr("dy", "0.32em")
+      .attr("fill", "#000")
+      .attr("font-weight", "bold")
+      .attr("text-anchor", "start")
+      .text("Percentage of population");
+    }
+    
     //Creating tool tip object so that it can be moved around the graph based on current hover states
     var toolTip = g.append("g")
     .attr("font-family", "sans-serif")

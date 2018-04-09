@@ -8,6 +8,7 @@ var PopulationData = "./data/Populations.csv";
 var filterYear = 1992;
 
 var percentageToggled = false;
+var percentageData;
 
 //Initial draw
 drawStackedBars();
@@ -78,11 +79,10 @@ function drawStackedBars(){
   var z = d3.scaleOrdinal()
   .range(["#24aa5e", "#31e981"]);
 
-  //Population Tests
-  // d3.csv(PopulationData, function(popData){
-  //   percentageData = popData;
-  //   console.log(percentageData);
-  // });
+  //Populate percentageData array with contents of PopulationData csv file
+  d3.csv(PopulationData, function(popData){
+    percentageData = popData;
+  });
 
   d3.csv(StudentData, function(data) {
 
@@ -94,8 +94,22 @@ function drawStackedBars(){
         return;
       }
 
+      var currProv = data.Province;
+      var provPop;
+
       if (percentageToggled) {
-        // get percentage of population
+        for (i = 0; i < percentageData.length; i++) {
+          if (percentageData[i]["province"] == currProv) {
+            provPop = percentageData[i]["population"];
+          }
+        } 
+
+        return {
+          Year: data.Year,
+          Province: data.Province,
+          ['Students without loans']: ((data['Students without loans'] - data['Students with loans'])/provPop)*100, //Subtracts students with loans from total to accurately portray the total number of students on the graph
+          ['Students with loans']: (data['Students with loans']/provPop)*100
+        }
 
       } else {
         return {
@@ -114,7 +128,12 @@ function drawStackedBars(){
 
     //data.sort(function(a, b) { return b.total - a.total; });
     x.domain(data.map(function(d) { if(d.Year == filterYear) return d.Province; }));
-    y.domain([0, d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; })]).nice();
+    if (!percentageToggled) {
+      y.domain([0, d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; })]).nice();
+    } else {
+      y.domain([0, 100]).nice();
+    }
+    
     z.domain(keys);
 
     //Main graph creation
@@ -124,7 +143,7 @@ function drawStackedBars(){
     .enter().append("g")
     .attr("fill", function(d) { return z(d.key); })
     .selectAll("rect")
-    .data(function(d) { console.log(d); return d; })
+    .data(function(d) { /*console.log('d');*/ return d; })
     .enter().append("rect")
     .attr("x", function(d) { return x(d.data.Province); })
     .attr("y", function(d) { return y(d[1]); })

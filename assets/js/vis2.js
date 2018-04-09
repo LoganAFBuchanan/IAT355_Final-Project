@@ -101,6 +101,7 @@ function drawStackedBars(){
         for (i = 0; i < percentageData.length; i++) {
           if (percentageData[i]["province"] == currProv) {
             provPop = percentageData[i]["population"];
+            console.log(currProv + ": " + provPop);
           }
         } 
 

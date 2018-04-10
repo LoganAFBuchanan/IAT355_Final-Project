@@ -1,12 +1,30 @@
-h2{
+/*
+-----------------
+General
+-----------------
+*/
+
+h2 {
   text-align:center;
   font-family: 'Raleway', sans-serif;
   font-weight:700;
 }
 
-text, button{
+text, button {
   font-family: 'Raleway', sans-serif;
   font-weight:400;
+}
+
+/*
+-----------------
+Layout
+-----------------
+*/
+
+main {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .quadrant {
@@ -16,22 +34,31 @@ text, button{
   vertical-align: top;
 }
 
-.quadrant svg {
-
+.button-row {
+  display:flex;
+  flex-flow:wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
 
-#stacked-title{
+.button-container {
+  display: block;
+  margin-top: 60px;
+}
+
+#stacked-title {
   font-size:1.7rem;
   font-family:monospace;
 }
 
-main{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+/*
+-----------------
+Buttons and data
+-----------------
+*/
 
-button{
+button {
   display:inline-block;
   color:white;
   padding:0.5rem 2rem;
@@ -47,112 +74,90 @@ button:hover {
   transition: 0.2s;
 }
 
-.button-container{
-  display: block;
-  margin-top: 60px;
-}
-
-.button-row {
-  /*width: 1500px;*/
-  display:flex;
-  flex-flow:wrap;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-}
-
-button.greyed{
+button.greyed {
   background-color:grey !important;
   opacity:.25;
 }
 
-.axis--x path {
-  display: none;
-}
-
-.line {
-  fill: none;
-  stroke-width: 2px;
-}
-
-#BritishColumbia{
+#BritishColumbia {
   stroke: red;
   background-color: red;
 }
-rect#BritishColumbia{
+rect#BritishColumbia {
   fill:red;
 }
 
-#Alberta{
+#Alberta {
   stroke:blue;
   background-color: blue;
 }
-rect#Alberta{
+rect#Alberta {
   fill:blue;
 }
 
-#Saskatchewan{
+#Saskatchewan {
   stroke: green;
   background-color: green;
 }
-rect#Saskatchewan{
+rect#Saskatchewan {
   fill:green;
 }
 
-#Yukon{
+#Yukon {
   stroke:yellow;
   color:black;
   background-color: yellow;
 }
-rect#Yukon{
+rect#Yukon {
   fill:yellow;
 }
 
-#Manitoba{
+#Manitoba {
   stroke: lightblue;
   background-color: lightblue;
 }
-rect#Manitoba{
+rect#Manitoba {
   fill:lightblue;
 }
 
-#Ontario{
+#Ontario {
   stroke: purple;
   background-color: purple;
 }
-rect#Ontario{
+rect#Ontario {
   fill:purple;
 }
 
-#NewBrunswick{
+#NewBrunswick {
   stroke:brown;
   background-color: brown;
 }
-rect#NewBrunswick{
+rect#NewBrunswick {
   fill:brown;
 }
 
-#NovaScotia{
+#NovaScotia {
   stroke: pink;
   background-color: pink;
 }
-rect#NovaScotia{
+rect#NovaScotia {
   fill:pink;
 }
 
-#PEI{
+#PEI {
   stroke: orange;
   background-color: orange;
+  fill: orange;
 }
-#PEI{
+rect#PEI {
   fill:orange;
 }
 
-#Newfoundland{
+#Newfoundland {
   stroke: darkgreen;
   background-color: darkgreen;
 }
-rect#Newfoundland{
+rect#Newfoundland {
   fill:darkgreen;
 }
 
@@ -165,4 +170,31 @@ rect#Newfoundland{
   stroke: blue;
   background-color: blue;
   opacity:;
+}
+
+#stacked-bars rect {
+  cursor: pointer;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+}
+
+#year {
+  width: 100%;
+  cursor: pointer;
+}
+
+#line-title {
+  font-size: 1.7rem;
+  font-family: monospace;
+}
+
+.fade {
+  opacity: 0.5;
 }

@@ -130,9 +130,7 @@ function drawGroupedBars(){
     .attr("x", width - 19)
     .attr("width", 19)
     .attr("height", 19)
-    .attr("opacity", function(d) {
-      return z(d.key);
-    })
+    .attr("opacity", z)
     .attr("id", function(d) {
       console.log(data[0].Province)
       return data[0].Province.replace(/\s/g, "");

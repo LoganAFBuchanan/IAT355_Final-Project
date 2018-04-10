@@ -1,6 +1,6 @@
 //Code Adapted from https://bl.ocks.org/mbostock/3884955
 
-"use strict";
+// "use strict";
 
 //Data url
 var LoanValueData ="./data/LoanValueData.csv";
@@ -48,6 +48,12 @@ document.querySelector("#PEI").addEventListener("click", function(){
 document.querySelector("#Newfoundland").addEventListener("click", function(){
   updateFilters("Newfoundland");
 });
+document.querySelector("#provinces-all").addEventListener("click", function(){
+  toggleButtons("on");
+});
+document.querySelector("#provinces-none").addEventListener("click", function(){
+  toggleButtons("off");
+});
 
 //Greys out buttons that represent values that aren't shown
 function updateButtons(prov_arg){
@@ -60,6 +66,28 @@ function updateButtons(prov_arg){
     provElement.classList.remove("greyed");
   }else{
     provElement.classList.add("greyed");
+  }
+}
+
+function toggleButtons(button_arg) {
+  var buttons = document.querySelectorAll("#province-buttons button");
+
+  if (button_arg == 'on') {
+    for (i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      var buttonName = button.dataset.name;
+      if (button.classList.contains("greyed")) {
+        updateFilters(buttonName);
+      }
+    }
+  } else if (button_arg == 'off') {
+    for (i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      var buttonName = button.dataset.name;
+      if (!button.classList.contains("greyed")) {
+        updateFilters(buttonName);
+      }
+    }
   }
 }
 
@@ -77,6 +105,7 @@ function updateFilters(prov){
   }else{
     hideVal.push(prov);
   }
+  console.log("This is the array:");
   console.log(hideVal);
 
   clearGraph();
@@ -118,7 +147,7 @@ function redrawGraph(){
     if (error) throw error;
 
     var provinces = data.columns.slice(1).map(function(id) {
-      console.log(id);
+      //console.log(id);
       return {
         id: id,
         values: data.map(function(d) {
@@ -133,7 +162,7 @@ function redrawGraph(){
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     for (let removedProv of hideVal) {
-      console.log(removedProv);
+      //console.log(removedProv);
       provinces.splice(provinces.findIndex(province => province.id === removedProv), 1);
     }
 

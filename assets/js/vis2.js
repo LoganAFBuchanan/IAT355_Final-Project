@@ -273,11 +273,8 @@ function drawStackedBars(){
     .attr("id", "stacked-title")
     .attr("text-anchor", "center");
 
-    title.append("text")
-    .attr("x", width/4) //Using positioning to roughly center because Edge doesn't like the transform attribute on svg elements
-    .attr("y", 9.5)
-    .attr("dy", "0.32em")
-    .text("Student Loan Figures: "+ filterYear); //Updates the title with the selected year
+    document.querySelector("#vis2Title").innerHTML = "Student Loan Figures: "+ filterYear;
+    
 
 
 

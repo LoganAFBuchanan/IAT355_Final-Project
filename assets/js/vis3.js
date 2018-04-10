@@ -133,6 +133,8 @@ function drawGroupedBars(){
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
+
+    document.querySelector("#vis3Title").innerHTML = "Graduate Debt: "+ selectedProv;
   });
 
 }

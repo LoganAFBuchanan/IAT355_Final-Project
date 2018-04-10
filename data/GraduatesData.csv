@@ -1,52 +1,52 @@
 year,province,level,graduatetype,value
-2000,Newfoundland and Labrador,College,Percentage of graduates who owed debt to the source,57
-2005,Newfoundland and Labrador,College,Percentage of graduates who owed debt to the source,55
-2010,Newfoundland and Labrador,College,Percentage of graduates who owed debt to the source,43
-2000,Newfoundland and Labrador,College,Percentage of graduates with large debt at graduation ($25000 and over),16
-2005,Newfoundland and Labrador,College,Percentage of graduates with large debt at graduation ($25000 and over),24
-2010,Newfoundland and Labrador,College,Percentage of graduates with large debt at graduation ($25000 and over),24
-2000,Newfoundland and Labrador,Bachelor's,Percentage of graduates who owed debt to the source,78
-2005,Newfoundland and Labrador,Bachelor's,Percentage of graduates who owed debt to the source,73
-2010,Newfoundland and Labrador,Bachelor's,Percentage of graduates who owed debt to the source,60
-2000,Newfoundland and Labrador,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),67
-2005,Newfoundland and Labrador,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),64
-2010,Newfoundland and Labrador,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),56
-2000,Newfoundland and Labrador,Master's,Percentage of graduates who owed debt to the source,41
-2005,Newfoundland and Labrador,Master's,Percentage of graduates who owed debt to the source,46
-2010,Newfoundland and Labrador,Master's,Percentage of graduates who owed debt to the source,64
-2000,Newfoundland and Labrador,Master's,Percentage of graduates with large debt at graduation ($25000 and over),24
-2005,Newfoundland and Labrador,Master's,Percentage of graduates with large debt at graduation ($25000 and over),37
-2010,Newfoundland and Labrador,Master's,Percentage of graduates with large debt at graduation ($25000 and over),44
-2000,Newfoundland and Labrador,Doctorate,Percentage of graduates who owed debt to the source,32
-2005,Newfoundland and Labrador,Doctorate,Percentage of graduates who owed debt to the source,68
-2010,Newfoundland and Labrador,Doctorate,Percentage of graduates who owed debt to the source,44
-2000,Newfoundland and Labrador,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
-2005,Newfoundland and Labrador,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),42
-2010,Newfoundland and Labrador,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),66
-2000,Prince Edward Island,College,Percentage of graduates who owed debt to the source,57
-2005,Prince Edward Island,College,Percentage of graduates who owed debt to the source,67
-2010,Prince Edward Island,College,Percentage of graduates who owed debt to the source,54
-2000,Prince Edward Island,College,Percentage of graduates with large debt at graduation ($25000 and over),6
-2005,Prince Edward Island,College,Percentage of graduates with large debt at graduation ($25000 and over),20
-2010,Prince Edward Island,College,Percentage of graduates with large debt at graduation ($25000 and over),17
-2000,Prince Edward Island,Bachelor's,Percentage of graduates who owed debt to the source,66
-2005,Prince Edward Island,Bachelor's,Percentage of graduates who owed debt to the source,74
-2010,Prince Edward Island,Bachelor's,Percentage of graduates who owed debt to the source,74
-2000,Prince Edward Island,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),40
-2005,Prince Edward Island,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),63
-2010,Prince Edward Island,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),52
-2000,Prince Edward Island,Master's,Percentage of graduates who owed debt to the source,65
-2005,Prince Edward Island,Master's,Percentage of graduates who owed debt to the source,42
-2010,Prince Edward Island,Master's,Percentage of graduates who owed debt to the source,48
-2000,Prince Edward Island,Master's,Percentage of graduates with large debt at graduation ($25000 and over),71
-2005,Prince Edward Island,Master's,Percentage of graduates with large debt at graduation ($25000 and over),x
-2010,Prince Edward Island,Master's,Percentage of graduates with large debt at graduation ($25000 and over),73
-2000,Prince Edward Island,Doctorate,Percentage of graduates who owed debt to the source,x
-2005,Prince Edward Island,Doctorate,Percentage of graduates who owed debt to the source,x
-2010,Prince Edward Island,Doctorate,Percentage of graduates who owed debt to the source,x
-2000,Prince Edward Island,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
-2005,Prince Edward Island,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
-2010,Prince Edward Island,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
+2000,Newfoundland,College,Percentage of graduates who owed debt to the source,57
+2005,Newfoundland,College,Percentage of graduates who owed debt to the source,55
+2010,Newfoundland,College,Percentage of graduates who owed debt to the source,43
+2000,Newfoundland,College,Percentage of graduates with large debt at graduation ($25000 and over),16
+2005,Newfoundland,College,Percentage of graduates with large debt at graduation ($25000 and over),24
+2010,Newfoundland,College,Percentage of graduates with large debt at graduation ($25000 and over),24
+2000,Newfoundland,Bachelor's,Percentage of graduates who owed debt to the source,78
+2005,Newfoundland,Bachelor's,Percentage of graduates who owed debt to the source,73
+2010,Newfoundland,Bachelor's,Percentage of graduates who owed debt to the source,60
+2000,Newfoundland,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),67
+2005,Newfoundland,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),64
+2010,Newfoundland,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),56
+2000,Newfoundland,Master's,Percentage of graduates who owed debt to the source,41
+2005,Newfoundland,Master's,Percentage of graduates who owed debt to the source,46
+2010,Newfoundland,Master's,Percentage of graduates who owed debt to the source,64
+2000,Newfoundland,Master's,Percentage of graduates with large debt at graduation ($25000 and over),24
+2005,Newfoundland,Master's,Percentage of graduates with large debt at graduation ($25000 and over),37
+2010,Newfoundland,Master's,Percentage of graduates with large debt at graduation ($25000 and over),44
+2000,Newfoundland,Doctorate,Percentage of graduates who owed debt to the source,32
+2005,Newfoundland,Doctorate,Percentage of graduates who owed debt to the source,68
+2010,Newfoundland,Doctorate,Percentage of graduates who owed debt to the source,44
+2000,Newfoundland,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
+2005,Newfoundland,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),42
+2010,Newfoundland,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),66
+2000,PEI,College,Percentage of graduates who owed debt to the source,57
+2005,PEI,College,Percentage of graduates who owed debt to the source,67
+2010,PEI,College,Percentage of graduates who owed debt to the source,54
+2000,PEI,College,Percentage of graduates with large debt at graduation ($25000 and over),6
+2005,PEI,College,Percentage of graduates with large debt at graduation ($25000 and over),20
+2010,PEI,College,Percentage of graduates with large debt at graduation ($25000 and over),17
+2000,PEI,Bachelor's,Percentage of graduates who owed debt to the source,66
+2005,PEI,Bachelor's,Percentage of graduates who owed debt to the source,74
+2010,PEI,Bachelor's,Percentage of graduates who owed debt to the source,74
+2000,PEI,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),40
+2005,PEI,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),63
+2010,PEI,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),52
+2000,PEI,Master's,Percentage of graduates who owed debt to the source,65
+2005,PEI,Master's,Percentage of graduates who owed debt to the source,42
+2010,PEI,Master's,Percentage of graduates who owed debt to the source,48
+2000,PEI,Master's,Percentage of graduates with large debt at graduation ($25000 and over),71
+2005,PEI,Master's,Percentage of graduates with large debt at graduation ($25000 and over),x
+2010,PEI,Master's,Percentage of graduates with large debt at graduation ($25000 and over),73
+2000,PEI,Doctorate,Percentage of graduates who owed debt to the source,x
+2005,PEI,Doctorate,Percentage of graduates who owed debt to the source,x
+2010,PEI,Doctorate,Percentage of graduates who owed debt to the source,x
+2000,PEI,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
+2005,PEI,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
+2010,PEI,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),x
 2000,Nova Scotia,College,Percentage of graduates who owed debt to the source,57
 2005,Nova Scotia,College,Percentage of graduates who owed debt to the source,55
 2010,Nova Scotia,College,Percentage of graduates who owed debt to the source,52
@@ -239,3 +239,27 @@ year,province,level,graduatetype,value
 2000,British Columbia,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),28
 2005,British Columbia,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),44
 2010,British Columbia,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),49
+2000,Territories,College,Percentage of graduates who owed debt to the source,56
+2005,Territories,College,Percentage of graduates who owed debt to the source,50
+2010,Territories,College,Percentage of graduates who owed debt to the source,40
+2000,Territories,College,Percentage of graduates with large debt at graduation ($25000 and over),9
+2005,Territories,College,Percentage of graduates with large debt at graduation ($25000 and over),16
+2010,Territories,College,Percentage of graduates with large debt at graduation ($25000 and over),25
+2000,Territories,Bachelor's,Percentage of graduates who owed debt to the source,64
+2005,Territories,Bachelor's,Percentage of graduates who owed debt to the source,61
+2010,Territories,Bachelor's,Percentage of graduates who owed debt to the source,48
+2000,Territories,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),31
+2005,Territories,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),42
+2010,Territories,Bachelor's,Percentage of graduates with large debt at graduation ($25000 and over),45
+2000,Territories,Master's,Percentage of graduates who owed debt to the source,41
+2005,Territories,Master's,Percentage of graduates who owed debt to the source,40
+2010,Territories,Master's,Percentage of graduates who owed debt to the source,42
+2000,Territories,Master's,Percentage of graduates with large debt at graduation ($25000 and over),30
+2005,Territories,Master's,Percentage of graduates with large debt at graduation ($25000 and over),38
+2010,Territories,Master's,Percentage of graduates with large debt at graduation ($25000 and over),38
+2000,Territories,Doctorate,Percentage of graduates who owed debt to the source,34
+2005,Territories,Doctorate,Percentage of graduates who owed debt to the source,34
+2010,Territories,Doctorate,Percentage of graduates who owed debt to the source,28
+2000,Territories,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),32
+2005,Territories,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),41
+2010,Territories,Doctorate,Percentage of graduates with large debt at graduation ($25000 and over),56

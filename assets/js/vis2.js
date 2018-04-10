@@ -7,6 +7,8 @@ var PopulationData = "./data/Populations.csv";
 //Filter year variable, this is what the default year value will be on page load
 var filterYear = 1992;
 
+var selectedProv = "Ontario";
+
 var percentageToggled = false;
 var percentageData;
 
@@ -40,8 +42,10 @@ function percentageToggle(){
 //It sets the filter year to the new value and then redraws the graph
 function sliderUpdate(){
   d3.select("#stacked-bars").selectAll("*").remove();
+  d3.select("#grouped-bars").selectAll("*").remove();
   filterYear = document.querySelector("#year").value;
   drawStackedBars();
+  drawGroupedBars();
 }
 
 //https://bl.ocks.org/tomshanley/3c49d036610853d380e3fcaf8d3f0b89
@@ -103,7 +107,7 @@ function drawStackedBars(){
             provPop = percentageData[i]["population"];
             console.log(currProv + ": " + provPop);
           }
-        } 
+        }
 
         return {
           Year: data.Year,
@@ -132,9 +136,9 @@ function drawStackedBars(){
     if (!percentageToggled) {
       y.domain([0, d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; })]).nice();
     } else {
-      y.domain([0, 100]).nice();
+      y.domain([0, d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; })]).nice();
     }
-    
+
     z.domain(keys);
 
     //Main graph creation
@@ -150,6 +154,12 @@ function drawStackedBars(){
     .attr("y", function(d) { return y(d[1]); })
     .attr("height", function(d) { return y(d[0]) - y(d[1]); })
     .attr("width", x.bandwidth())
+    .on("click", function(d) {
+      console.log(d.data.Province);
+      selectedProv = d.data.Province;
+      d3.select("#grouped-bars").selectAll("*").remove();
+      drawGroupedBars();
+    })
     .on('mouseover', function(d){
       this.style.cssText = "opacity: 0.8"; //Highlights hovered bar by lightening the colour
       d3.select("#tooltip")
@@ -186,7 +196,7 @@ function drawStackedBars(){
       .text("Total Students");
     } else {
       var scale = d3.scaleLinear()
-      .domain([100, 0])
+      .domain([d3.max(data, function(d) { return +d['Students without loans'] + +d['Students with loans']; }), 0])
       .rangeRound([0, height]);
 
       var formatPercent = d3.format(".0%");

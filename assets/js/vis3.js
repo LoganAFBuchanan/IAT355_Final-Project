@@ -36,7 +36,7 @@ function drawGroupedBars(){
     }
 
 
-    if(data.province == "Ontario" && data.year == selectedYear){
+    if(data.province == selectedProv && data.year == selectedYear){
       return {
         Year: data.year,
         Province: data.province,

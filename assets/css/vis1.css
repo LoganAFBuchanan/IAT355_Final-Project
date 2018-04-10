@@ -79,15 +79,24 @@ button.greyed{
   stroke: red;
   background-color: red;
 }
+rect#BritishColumbia{
+  fill:red;
+}
 
 #Alberta{
   stroke:blue;
   background-color: blue;
 }
+rect#Alberta{
+  fill:blue;
+}
 
 #Saskatchewan{
   stroke: green;
   background-color: green;
+}
+rect#Saskatchewan{
+  fill:green;
 }
 
 #Yukon{
@@ -95,35 +104,56 @@ button.greyed{
   color:black;
   background-color: yellow;
 }
+rect#Yukon{
+  fill:yellow;
+}
 
 #Manitoba{
   stroke: lightblue;
   background-color: lightblue;
+}
+rect#Manitoba{
+  fill:lightblue;
 }
 
 #Ontario{
   stroke: purple;
   background-color: purple;
 }
+rect#Ontario{
+  fill:purple;
+}
 
 #NewBrunswick{
   stroke:brown;
   background-color: brown;
+}
+rect#NewBrunswick{
+  fill:brown;
 }
 
 #NovaScotia{
   stroke: pink;
   background-color: pink;
 }
+rect#NovaScotia{
+  fill:pink;
+}
 
 #PEI{
   stroke: orange;
   background-color: orange;
 }
+#PEI{
+  fill:orange;
+}
 
 #Newfoundland{
   stroke: darkgreen;
   background-color: darkgreen;
+}
+rect#Newfoundland{
+  fill:darkgreen;
 }
 
 #capita-toggle {

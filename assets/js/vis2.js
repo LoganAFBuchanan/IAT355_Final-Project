@@ -83,7 +83,7 @@ function drawStackedBars(){
   .rangeRound([height, 0]);
 
   var z = d3.scaleOrdinal()
-  .range(["#24aa5e", "#31e981"]);
+  .range(["1", "0.6"]);
 
   //Populate percentageData array with contents of PopulationData csv file
   d3.csv(PopulationData, function(popData){
@@ -148,7 +148,7 @@ function drawStackedBars(){
     .selectAll("g")
     .data(d3.stack().keys(keys)(data))
     .enter().append("g")
-    .attr("fill", function(d) { return z(d.key); })
+    .attr("opacity", function(d) { return z(d.key); })
     .selectAll("rect")
     .data(function(d) { /*console.log('d');*/ return d; })
     .enter().append("rect")
@@ -185,7 +185,8 @@ function drawStackedBars(){
       this.style.cssText = "opacity: 1"; //Sets colourof the bar back to normal after mouse leaves
       d3.select("#tooltip")
       .attr("style", "opacity:0;"); //Makes tooltip text invisible
-    });
+    })
+    .attr("id", function(d) { return d.data.Province.replace(/\s/g, ""); });
 
     //Creating X Axis
     g.append("g")
@@ -274,7 +275,7 @@ function drawStackedBars(){
     .attr("text-anchor", "center");
 
     document.querySelector("#vis2Title").innerHTML = "Student Loan Figures: "+ filterYear;
-    
+
 
 
 

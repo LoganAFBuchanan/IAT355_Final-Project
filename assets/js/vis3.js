@@ -22,7 +22,7 @@ function drawGroupedBars(){
   .rangeRound([height, 0]);
 
   var z = d3.scaleOrdinal()
-  .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+  .range([0.6, 1]);
 
   d3.csv(GraduateData, function(data) {
 
@@ -92,8 +92,12 @@ function drawGroupedBars(){
     .attr("y", function(d) { return y(d.Value); })
     .attr("width", x1.bandwidth())
     .attr("height", function(d) { return height - y(d.Value); })
-    .attr("fill", function(d) {
+    .attr("opacity", function(d) {
       return z(d.key);
+    })
+    .attr("id", function(d) {
+      console.log(data[0].Province)
+      return data[0].Province.replace(/\s/g, "");
     });
 
     g.append("g")
@@ -126,7 +130,13 @@ function drawGroupedBars(){
     .attr("x", width - 19)
     .attr("width", 19)
     .attr("height", 19)
-    .attr("fill", z);
+    .attr("opacity", function(d) {
+      return z(d.key);
+    })
+    .attr("id", function(d) {
+      console.log(data[0].Province)
+      return data[0].Province.replace(/\s/g, "");
+    });
 
     legend.append("text")
     .attr("x", width - 24)

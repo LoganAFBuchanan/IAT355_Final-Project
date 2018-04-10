@@ -259,7 +259,7 @@ function drawStackedBars(){
     .attr("x", width - 19)
     .attr("width", 19)
     .attr("height", 19)
-    .attr("fill", z);
+    .attr("opacity", z);
 
     //Text for each legend item
     legend.append("text")

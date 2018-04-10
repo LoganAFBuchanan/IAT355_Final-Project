@@ -26,6 +26,13 @@ function drawGroupedBars(){
 
   d3.csv(GraduateData, function(data) {
 
+    //Adjusting the year selected based on the main year sliderUpdate
+    //The data only has information on three years so the denominations are as follows
+    /*
+    Before 2000 = 2000
+    Between 2000 & 2010 = 2005
+    After 2010 = 2010
+    */
     var selectedYear;
     if(filterYear <= 2000){
       selectedYear = 2000;
@@ -36,6 +43,7 @@ function drawGroupedBars(){
     }
 
 
+    //Modelling data from the CSV based on selected filters from the year slider and the selected province
     if(data.province == selectedProv && data.year == selectedYear){
       return {
         Year: data.year,
@@ -51,6 +59,7 @@ function drawGroupedBars(){
   }, function(error, data) {
     if (error) throw error;
 
+    //Creating keys for the side by side bars
     var keys = [
       "Percentage of graduates who owed debt to the source",
       "Percentage of graduates with large debt at graduation ($25000 and over)"
@@ -73,6 +82,7 @@ function drawGroupedBars(){
         if(key == d["GraduateType"]){
           return {key: key, Value: d["Value"]};
         }else{
+          //ELiminating edge case where the incorrect values were drawn twice on top of one another
           return {key: key, Value: 0};
         }
       });

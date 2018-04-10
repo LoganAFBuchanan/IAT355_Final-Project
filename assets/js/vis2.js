@@ -6,9 +6,10 @@ var PopulationData = "./data/Populations.csv";
 
 //Filter year variable, this is what the default year value will be on page load
 var filterYear = 1992;
-
+//Filtered province for vis 3, default set to Ontario
 var selectedProv = "Ontario";
 
+//Variables for keeping track of the percentage display for vis2
 var percentageToggled = false;
 var percentageData;
 
@@ -19,6 +20,7 @@ document.querySelector("#capita-toggle").addEventListener("click", function(){
   switchGraphMode();
 });
 
+//Updates graphs for the percentage toggle switch
 function switchGraphMode() {
   percentageToggle();
   clearGraph();

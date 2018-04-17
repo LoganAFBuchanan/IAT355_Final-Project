@@ -4,16 +4,38 @@ General
 -----------------
 */
 
+body{
+  margin:0;
+}
+
+h1{
+  font-family: 'Raleway', sans-serif;
+  font-size:3rem;
+  padding-left:1rem;
+  font-weight:700;
+  margin-bottom:0;
+}
+
 h2 {
   text-align:center;
   font-family: 'Raleway', sans-serif;
   font-weight:700;
 }
 
+h3{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  padding-left: 1.2rem;
+  font-weight: 700;
+  opacity: 0.6;
+  margin-top: 0.2rem;
+}
+
 text, button {
   font-family: 'Raleway', sans-serif;
   font-weight:400;
 }
+
 
 /*
 -----------------

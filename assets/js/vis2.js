@@ -169,7 +169,7 @@ function drawStackedBars(){
         .transition()
         .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
         .attr("y", this.getAttribute("y"))
-        .attr("style", "opacity:1;")
+        .attr("style", "opacity:1; background:white; padding:1em;")
         .text(d[1]- d[0]);
       }else{
         percentageValue = String(d[1]- d[0]);
@@ -177,14 +177,14 @@ function drawStackedBars(){
         .transition()
         .attr("x", this.getAttribute("x")) //Moves the tooltip text to the top left of the hovered bar
         .attr("y", this.getAttribute("y"))
-        .attr("style", "opacity:1;")
+        .attr("style", "opacity:1;nbackground:white; padding:1em;")
         .text(percentageValue.slice(0, -12) + "%"); //Trims the end of the string so there isn't a massive amount of decimal values
       }
     })
     .on('mouseout', function(d){
-      this.style.cssText = "opacity: 1"; //Sets colourof the bar back to normal after mouse leaves
+      this.style.cssText = "opacity: 1; background:white; padding:1em;"; //Sets colourof the bar back to normal after mouse leaves
       d3.select("#tooltip")
-      .attr("style", "opacity:0;"); //Makes tooltip text invisible
+      .attr("style", "opacity:0; background:white; padding:1em;"); //Makes tooltip text invisible
     })
     .attr("id", function(d) { return d.data.Province.replace(/\s/g, ""); });
 
@@ -242,6 +242,7 @@ function drawStackedBars(){
     .attr("x", 0)
     .attr("width", 190)
     .attr("height", 50)
+    .attr("style", "background:white; padding:1em;")
     .attr("id", "tooltip");
 
     //Colour legend for the stacked bar chart

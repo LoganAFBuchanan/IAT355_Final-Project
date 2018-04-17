@@ -1,6 +1,7 @@
 //Adapted from Mike Bostock https://bl.ocks.org/mbostock/3887051
 
 var GraduateData ="./data/GraduatesData.csv";
+var selectedYear = 2000;
 
 drawGroupedBars();
 
@@ -33,7 +34,7 @@ function drawGroupedBars(){
     Between 2000 & 2010 = 2005
     After 2010 = 2010
     */
-    var selectedYear;
+
     if(filterYear <= 2000){
       selectedYear = 2000;
     }else if(filterYear > 2000 && filterYear < 2010){
@@ -93,7 +94,7 @@ function drawGroupedBars(){
     .attr("width", x1.bandwidth())
     .attr("height", function(d) { return height - y(d.Value); })
     .attr("opacity", function(d) {
-      return z(d.key);
+      return z(d.key) - 0.3;
     })
     .attr("id", function(d) {
       console.log(data[0].Province)
@@ -142,7 +143,7 @@ function drawGroupedBars(){
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
 
-    document.querySelector("#vis3Title").innerHTML = "Graduate Debt: "+ selectedProv;
+    document.querySelector("#vis3Title").innerHTML = "Graduate Debt: "+ selectedProv + " (" + selectedYear + ")";
   });
 
 }
